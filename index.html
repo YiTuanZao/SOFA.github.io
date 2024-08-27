@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFA评分计算器</title>
+    <script>
+        function calculateScore() {
+            let totalScore = 0;
+            const scoreMapping = {
+                'A': [0, 1, 2, 3, 4],
+                'B': [0, 1, 2, 3, 4],
+                'C': [0, 1, 2, 3, 4],
+                'D': [0, 1, 2, 3, 4],
+                'E': [0, 1, 2, 3, 4],
+                'F': [0, 1, 2, 3, 4],
+                'G': [0, 1, 2, 3, 4]
+            };
+
+            for (let key in scoreMapping) {
+                const radios = document.getElementsByName(key);
+                for (let radio of radios) {
+                    if (radio.checked) {
+                        // 将选中的值转换为数字并相加
+                        totalScore += parseInt(radio.value[0]); // 取值的第一个字符并转为整数
+                    }
+                }
+            }
+
+            // 显示总分
+            document.getElementById("totalScore").innerText = "总分: " + totalScore;
+        }
+    </script>
+</head>
+<body>
+  
+    <div class="container">
+        <h1>SOFA评分计算器</h1>
+       
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>系统</th>
+                    <th>0分</th>
+                    <th>1分</th>
+                    <th>2分</th>
+                    <th>3分</th>
+                    <th>4分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PaO₂/FiO₂/mmHg(kPa)(呼吸系统)</td>
+                    <td>
+                        <input type="radio" name="A" value="0"> >=400
+                        (53.3)<br>
+                        
+                    </td>
+                    <td>
+                        <input type="radio" name="A" value="1"> <400
+                        (53.3) <br>
+                        
+                    </td>
+                    <td>
+                        <input type="radio" name="A" value="2"> <300
+                        (40.0) <br>
+                        
+                    </td>
+                    <td>
+                        <input type="radio" name="A" value="3"> <200(26.7)十
+                        机械通气 <br>
+                        
+                    </td>
+                    <td>
+                        <input type="radio" name="A" value="4"> <100(13.3)十
+                        机械通气 <br>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </thead>
+        <tbody>
+            <tr>
+                <td>血小板/(10^3/μL)(凝血系统)</td>
+                <td>
+                    <input type="radio" name="B" value="0"> >=150<br>
+                    
+                </td>
+                <td>
+                    <input type="radio" name="B" value="1"> <150 <br>
+                    
+                </td>
+                <td>
+                    <input type="radio" name="B" value="2"> <100 <br>
+                    
+                </td>
+                <td>
+                    <input type="radio" name="B" value="3"> <50 <br>
+                    
+                </td>
+                <td>
+                    <input type="radio" name="B" value="4"> <20 <br>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </thead>
+    <tbody>
+        <tr>
+            <td>胆红素/[mg/dl(μmol/L)(肝脏)</td>
+            <td>
+                <input type="radio" name="C" value="0"> <1.2(20) <br>
+                
+            </td>
+            <td>
+                <input type="radio" name="C" value="1"> 1.2~1.9(20~32)<br>
+                
+            </td>
+            <td>
+                <input type="radio" name="C" value="2"> 2.0~5.9(33~101)<br>
+                
+            </td>
+            <td>
+                <input type="radio" name="C" value="3"> <6.0~11.9(102~204) <br>
+                
+            </td>
+            <td>
+                <input type="radio" name="C" value="4"> >=12.0(204) <br>
+                
+            </td>
+        </tr>
+    </tbody>
+</thead>
+<tbody>
+    <tr>
+        <td>心血管系统</td>
+        <td>
+            <input type="radio" name="D" value="0"> MAP>=70 mmHg <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="D" value="1"> MAP<70 mmHg <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="D" value="2"> 多巴胺<5
+            或多巴酚丁胺
+            (任何剂量) <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="D" value="3">多巴胺 5.1~15.0 或肾上腺素<0.1或去甲肾上腺素>0.1<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="D" value="4"> 多巴胺>15 或肾上腺素>0.1或去甲肾上腺素>0.11<br>
+            
+        </td>
+    </tr>
+</tbody>
+</thead>
+<tbody>
+    <tr>
+        <td>格拉斯哥昏迷量表评分/分(中枢神经系统)</td>
+        <td>
+            <input type="radio" name="E" value="0"> 15<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="E" value="1"> 13~14<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="E" value="2"> 10~12<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="E" value="3"> 6~9<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="E" value="4"> <6 <br>
+            
+        </td>
+    </tr>
+</tbody>
+</thead>
+<tbody>
+    <tr>
+        <td>肌酐/[mg/dl(μmol/L)(肾脏)</td>
+        <td>
+            <input type="radio" name="F" value="0"> <1.2(110) <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="F" value="1"> 1.2~1.9(110~170) <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="F" value="2"> 2.0~3.4(171~299)<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="F" value="3"> 3.5~4.9(300~440)<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="F" value="4"> >4.9(440) <br>
+            
+        </td>
+    </tr>
+</tbody>
+</thead>
+<tbody>
+    <tr>
+        <td>尿量/(ml/d)(肾脏)</td>
+        <td>
+            <input type="radio" name="G" value="0"> -<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="G" value="1"> -<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="G" value="2"> -<br>
+            
+        </td>
+        <td>
+            <input type="radio" name="G" value="3"> <500 <br>
+            
+        </td>
+        <td>
+            <input type="radio" name="G" value="4"> <200 <br>
+            
+        </td>
+    </tr>
+</tbody>
+            
+        </table>
+        <button onclick="calculateScore()">计算总分</button>
+        <h2 id="totalScore">总分: 0</h2>
+    </div>
+</body>
+</html>
