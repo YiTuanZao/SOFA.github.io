@@ -22,13 +22,13 @@
                 const radios = document.getElementsByName(key);
                 for (let radio of radios) {
                     if (radio.checked) {
-                        // 将选中的值转换为数字并相加
+                        
                         totalScore += parseInt(radio.value[0]); // 取值的第一个字符并转为整数
                     }
                 }
             }
 
-            // 显示总分
+          
             document.getElementById("totalScore").innerText = "总分: " + totalScore;
         }
     </script>
@@ -37,11 +37,17 @@
   
     <div class="container">
         <h1>SOFA评分计算器</h1>
+        <style>
+            h1 {
+              text-align: center;
+            }
+          </style>
        
         <table border="1">
             <thead>
                 <tr>
                     <th>系统</th>
+                    <th>相关指标</th>
                     <th>0分</th>
                     <th>1分</th>
                     <th>2分</th>
@@ -51,7 +57,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>PaO₂/FiO₂/mmHg(kPa)(呼吸系统)</td>
+                    <td>呼吸系统</td>
+                    <td>PaO₂/FiO₂/mmHg(kPa)</td>
                     <td>
                         <input type="radio" name="A" value="0"> >=400
                         (53.3)<br>
@@ -82,7 +89,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>血小板/(10^3/μL)(凝血系统)</td>
+                <td>凝血系统</td>
+                <td>血小板/(10^3/μL)凝血系统</td>
                 <td>
                     <input type="radio" name="B" value="0"> >=150<br>
                     
@@ -108,6 +116,7 @@
     </thead>
     <tbody>
         <tr>
+            <td>肝脏</td>
             <td>胆红素/[mg/dl(μmol/L)(肝脏)</td>
             <td>
                 <input type="radio" name="C" value="0"> <1.2(20) <br>
@@ -135,6 +144,7 @@
 <tbody>
     <tr>
         <td>心血管系统</td>
+        <td>相关物质含量</td>
         <td>
             <input type="radio" name="D" value="0"> MAP>=70 mmHg <br>
             
@@ -162,7 +172,8 @@
 </thead>
 <tbody>
     <tr>
-        <td>格拉斯哥昏迷量表评分/分(中枢神经系统)</td>
+        <td>中枢神经系统</td>
+        <td>格拉斯哥昏迷量表评分/分</td>
         <td>
             <input type="radio" name="E" value="0"> 15<br>
             
@@ -188,7 +199,8 @@
 </thead>
 <tbody>
     <tr>
-        <td>肌酐/[mg/dl(μmol/L)(肾脏)</td>
+        <td rowspan="2">肾脏</td> <!-- Merge the cells for "肾脏" -->
+        <td>肌酐/[mg/dl(μmol/L)</td>
         <td>
             <input type="radio" name="F" value="0"> <1.2(110) <br>
             
@@ -210,21 +222,18 @@
             
         </td>
     </tr>
-</tbody>
-</thead>
-<tbody>
     <tr>
-        <td>尿量/(ml/d)(肾脏)</td>
+        <td>尿量/(ml/d)</td>
         <td>
-            <input type="radio" name="G" value="0"> -<br>
+            
             
         </td>
         <td>
-            <input type="radio" name="G" value="1"> -<br>
+            
             
         </td>
         <td>
-            <input type="radio" name="G" value="2"> -<br>
+            
             
         </td>
         <td>
