@@ -34,11 +34,11 @@
             };
 
             for (let key in scoreMapping) {
-                const radios = document.getElementsByName(key);
-                for (let radio of radios) {
-                    if (radio.checked) {
+                const checkboxs = document.getElementsByName(key);
+                for (let checkbox of checkboxs) {
+                    if (checkbox.checked) {
                         
-                        totalScore += parseInt(radio.value[0]); // 取值的第一个字符并转为整数
+                        totalScore += parseInt(checkbox.value[0]); // 取值的第一个字符并转为整数
                     }
                 }
             }
@@ -81,27 +81,27 @@
                     <td>呼吸系统</td>
                     <td>PaO₂/FiO₂/mmHg(kPa)</td>
                     <td>
-                        <input type="radio" name="A" value="0" onclick="calculateScore()"> >=400
+                        <input type="checkbox" name="A" value="0" onclick="calculateScore()"> >=400
                         (53.3)<br>
                         
                     </td>
                     <td>
-                        <input type="radio" name="A" value="1" onclick="calculateScore()" > <400
+                        <input type="checkbox" name="A" value="1" onclick="calculateScore()" > <400
                         (53.3) <br>
                         
                     </td>
                     <td>
-                        <input type="radio" name="A" value="2" onclick="calculateScore()" > <300
+                        <input type="checkbox" name="A" value="2" onclick="calculateScore()" > <300
                         (40.0) <br>
                         
                     </td>
                     <td>
-                        <input type="radio" name="A" value="3" onclick="calculateScore()" > <200(26.7)十
+                        <input type="checkbox" name="A" value="3" onclick="calculateScore()" > <200(26.7)十
                         机械通气 <br>
                         
                     </td>
                     <td>
-                        <input type="radio" name="A" value="4" onclick="calculateScore()" > <100(13.3)十
+                        <input type="checkbox" name="A" value="4" onclick="calculateScore()" > <100(13.3)十
                         机械通气 <br>
                         
                     </td>
@@ -113,23 +113,23 @@
                 <td>凝血系统</td>
                 <td>血小板/(10^3/μL)凝血系统</td>
                 <td>
-                    <input type="radio" name="B" value="0" onclick="calculateScore()" > >=150<br>
+                    <input type="checkbox" name="B" value="0" onclick="calculateScore()" > >=150<br>
                     
                 </td>
                 <td>
-                    <input type="radio" name="B" value="1" onclick="calculateScore()" > <150 <br>
+                    <input type="checkbox" name="B" value="1" onclick="calculateScore()" > <150 <br>
                     
                 </td>
                 <td>
-                    <input type="radio" name="B" value="2" onclick="calculateScore()" > <100 <br>
+                    <input type="checkbox" name="B" value="2" onclick="calculateScore()" > <100 <br>
                     
                 </td>
                 <td>
-                    <input type="radio" name="B" value="3" onclick="calculateScore()" > <50 <br>
+                    <input type="checkbox" name="B" value="3" onclick="calculateScore()" > <50 <br>
                     
                 </td>
                 <td>
-                    <input type="radio" name="B" value="4" onclick="calculateScore()" > <20 <br>
+                    <input type="checkbox" name="B" value="4" onclick="calculateScore()" > <20 <br>
                     
                 </td>
             </tr>
@@ -140,23 +140,23 @@
             <td>肝脏</td>
             <td>胆红素/[mg/dl(μmol/L)(肝脏)</td>
             <td>
-                <input type="radio" name="C" value="0" onclick="calculateScore()" > <1.2(20) <br>
+                <input type="checkbox" name="C" value="0" onclick="calculateScore()" > <1.2(20) <br>
                 
             </td>
             <td>
-                <input type="radio" name="C" value="1" onclick="calculateScore()" > 1.2~1.9(20~32)<br>
+                <input type="checkbox" name="C" value="1" onclick="calculateScore()" > 1.2~1.9(20~32)<br>
                 
             </td>
             <td>
-                <input type="radio" name="C" value="2" onclick="calculateScore()" > 2.0~5.9(33~101)<br>
+                <input type="checkbox" name="C" value="2" onclick="calculateScore()" > 2.0~5.9(33~101)<br>
                 
             </td>
             <td>
-                <input type="radio" name="C" value="3" onclick="calculateScore()" > <6.0~11.9(102~204) <br>
+                <input type="checkbox" name="C" value="3" onclick="calculateScore()" > <6.0~11.9(102~204) <br>
                 
             </td>
             <td>
-                <input type="radio" name="C" value="4" onclick="calculateScore()" > >=12.0(204) <br>
+                <input type="checkbox" name="C" value="4" onclick="calculateScore()" > >=12.0(204) <br>
                 
             </td>
         </tr>
@@ -167,25 +167,25 @@
         <td>心血管系统</td>
         <td>相关物质含量</td>
         <td>
-            <input type="radio" name="D" value="0" onclick="calculateScore()" > MAP>=70 mmHg <br>
+            <input type="checkbox" name="D" value="0" onclick="calculateScore()" > MAP>=70 mmHg <br>
             
         </td>
         <td>
-            <input type="radio" name="D" value="1" onclick="calculateScore()" > MAP<70 mmHg <br>
+            <input type="checkbox" name="D" value="1" onclick="calculateScore()" > MAP<70 mmHg <br>
             
         </td>
         <td>
-            <input type="radio" name="D" value="2" onclick="calculateScore()" > 多巴胺<5
+            <input type="checkbox" name="D" value="2" onclick="calculateScore()" > 多巴胺<5
             或多巴酚丁胺
             (任何剂量) <br>
             
         </td>
         <td>
-            <input type="radio" name="D" value="3" onclick="calculateScore()" >多巴胺 5.1~15.0 或肾上腺素<0.1或去甲肾上腺素>0.1<br>
+            <input type="checkbox" name="D" value="3" onclick="calculateScore()" >多巴胺 5.1~15.0 或肾上腺素<0.1或去甲肾上腺素>0.1<br>
             
         </td>
         <td>
-            <input type="radio" name="D" value="4" onclick="calculateScore()" > 多巴胺>15 或肾上腺素>0.1或去甲肾上腺素>0.11<br>
+            <input type="checkbox" name="D" value="4" onclick="calculateScore()" > 多巴胺>15 或肾上腺素>0.1或去甲肾上腺素>0.11<br>
             
         </td>
     </tr>
@@ -196,23 +196,23 @@
         <td>中枢神经系统</td>
         <td>格拉斯哥昏迷量表评分/分</td>
         <td>
-            <input type="radio" name="E" value="0" onclick="calculateScore()" > 15<br>
+            <input type="checkbox" name="E" value="0" onclick="calculateScore()" > 15<br>
             
         </td>
         <td>
-            <input type="radio" name="E" value="1" onclick="calculateScore()" > 13~14<br>
+            <input type="checkbox" name="E" value="1" onclick="calculateScore()" > 13~14<br>
             
         </td>
         <td>
-            <input type="radio" name="E" value="2" onclick="calculateScore()" > 10~12<br>
+            <input type="checkbox" name="E" value="2" onclick="calculateScore()" > 10~12<br>
             
         </td>
         <td>
-            <input type="radio" name="E" value="3" onclick="calculateScore()" > 6~9<br>
+            <input type="checkbox" name="E" value="3" onclick="calculateScore()" > 6~9<br>
             
         </td>
         <td>
-            <input type="radio" name="E" value="4" onclick="calculateScore()" > <6 <br>
+            <input type="checkbox" name="E" value="4" onclick="calculateScore()" > <6 <br>
             
         </td>
     </tr>
@@ -223,23 +223,23 @@
         <td rowspan="2">肾脏</td> <!-- Merge the cells for "肾脏" -->
         <td>肌酐/[mg/dl(μmol/L)</td>
         <td>
-            <input type="radio" name="F" value="0" onclick="calculateScore()" > <1.2(110) <br>
+            <input type="checkbox" name="F" value="0" onclick="calculateScore()" > <1.2(110) <br>
             
         </td>
         <td>
-            <input type="radio" name="F" value="1" onclick="calculateScore()" > 1.2~1.9(110~170) <br>
+            <input type="checkbox" name="F" value="1" onclick="calculateScore()" > 1.2~1.9(110~170) <br>
             
         </td>
         <td>
-            <input type="radio" name="F" value="2" onclick="calculateScore()" > 2.0~3.4(171~299)<br>
+            <input type="checkbox" name="F" value="2" onclick="calculateScore()" > 2.0~3.4(171~299)<br>
             
         </td>
         <td>
-            <input type="radio" name="F" value="3" onclick="calculateScore()" > 3.5~4.9(300~440)<br>
+            <input type="checkbox" name="F" value="3" onclick="calculateScore()" > 3.5~4.9(300~440)<br>
             
         </td>
         <td>
-            <input type="radio" name="F" value="4" onclick="calculateScore()" > >4.9(440) <br>
+            <input type="checkbox" name="F" value="4" onclick="calculateScore()" > >4.9(440) <br>
             
         </td>
     </tr>
@@ -258,11 +258,11 @@
             
         </td>
         <td>
-            <input type="radio" name="G" value="3" onclick="calculateScore()" > <500 <br>
+            <input type="checkbox" name="G" value="3" onclick="calculateScore()" > <500 <br>
             
         </td>
         <td>
-            <input type="radio" name="G" value="4" onclick="calculateScore()" > <200 <br>
+            <input type="checkbox" name="G" value="4" onclick="calculateScore()" > <200 <br>
             
         </td>
     </tr>
