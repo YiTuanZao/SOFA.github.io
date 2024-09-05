@@ -20,6 +20,7 @@
         }
     </style>
     
+    
     <script>
         function calculateScore() {
             let totalScore = 0;
@@ -48,9 +49,31 @@
         }
     </script>
     
+    <script>
+        function count() {
+            let zhishu = 0;
+            const scoreMapping = {
+                'E1': [0, 1, 2, 3, 4],
+                'E2': [0, 1, 2, 3, 4,5],
+                'E3': [0, 1, 2, 3, 4,5,6],
+               
+            };
 
+            for (let key in scoreMapping) {
+                const checkboxs = document.getElementsByName(key);
+                for (let checkbox of checkboxs) {
+                    if (checkbox.checked) {
+                        
+                        zhishu += parseInt(checkbox.value[0]); // 取值的第一个字符并转为整数
+                    }
+                }
+            }
 
-
+          
+            document.getElementById("zhishu").innerText = "GCS总分: " + zhishu;
+        }
+    </script>
+    
 
 
 
@@ -191,32 +214,34 @@
     </tr>
 </tbody>
 </thead>
-<tbody>
-    <tr>
-        <td>中枢神经系统</td>
-        <td>格拉斯哥昏迷量表评分/分</td>
+<td>中枢神经系统(详见下表)</td>
+        <td>Glasgow昏迷量表评分/分</td>
         <td>
+            
             <input type="checkbox" name="E" value="0" onclick="calculateScore()" > 15<br>
             
         </td>
         <td>
+           
             <input type="checkbox" name="E" value="1" onclick="calculateScore()" > 13~14<br>
             
         </td>
         <td>
+           
             <input type="checkbox" name="E" value="2" onclick="calculateScore()" > 10~12<br>
             
         </td>
         <td>
+            
             <input type="checkbox" name="E" value="3" onclick="calculateScore()" > 6~9<br>
             
         </td>
         <td>
+            
             <input type="checkbox" name="E" value="4" onclick="calculateScore()" > <6 <br>
             
         </td>
     </tr>
-</tbody>
 </thead>
 <tbody>
     <tr>
@@ -267,10 +292,198 @@
         </td>
     </tr>
 </tbody>
-            
-        </table>
         
+</table>
+
+
         <h2 id="totalScore">总分: 0</h2>
+    </div>
+
+
+    <div class="container">
+        <h1>Glasgow昏迷量表(GCS)</h1>
+        <style>
+            h1 {
+              text-align: center;
+            }
+          </style>
+       
+       <table>
+        <thead>
+            <tr>
+                <th>系统</th>
+                <th>项目</th>
+                <th>刺激</th>
+                <th>患者反应</th>
+                <th>评分</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">格拉斯哥昏迷量表（E）</td>
+                <td rowspan="5">睁眼（单选）</td>
+                <td>自发</td>
+                <td>
+                    自己睁眼
+                </td>
+                <td>
+                    <input type="checkbox" name="E1" value="4" onclick="count()"> 4分<br>
+                </td>
+            </tr>
+            <tr>
+                
+                <td>语言</td>
+                <td>
+                    呼叫时睁眼
+                </td>
+                <td><input type="checkbox" name="E1" value="3" onclick="count()"> 3分<br></td>
+            </tr>
+            <tr>
+                
+                <td rowspan="2">疼痛</td>
+                <td>
+                   疼痛刺激时睁眼
+                </td>
+                <td><input type="checkbox" name="E1" value="2" onclick="count()"> 2分<br></td>
+            </tr>
+            <tr>
+                
+    
+                <td>
+                     任何刺激不睁眼
+                </td>
+                <td><input type="checkbox" name="E1" value="1" onclick="count()"> 1分<br></td>
+            </tr>
+    
+            <tr>
+                <td>“C”(closed)</td>
+                <td>
+                    如因眼肿、骨折等不能睁眼，应以“C”(closed)表示
+                </td>
+                <td>C分</td>
+            </tr>
+        </tbody>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="7">格拉斯哥昏迷量表(V)</td>
+            <td rowspan="7">言语反应（单选）</td>
+            <td rowspan="5">语言</td>
+            <td>
+               能正确会话
+            </td>
+            <td><input type="checkbox" name="E2" value="5" onclick="count()"> 5分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+                 语言错乱，定向障碍
+            </td>
+            <td><input type="checkbox" name="E2" value="4" onclick="count()"> 4分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+                说话能被理解，但无意义
+            </td>
+            <td><input type="checkbox" name="E2" value="3" onclick="count()"> 3分<br></td>
+        </tr>
+        <tr>
+            
+           
+            <td>
+                能发出声音，但不能被理解
+            </td>
+            <td><input type="checkbox" name="E2" value="2" onclick="count()"> 2分<br></td>
+        </tr>
+        <tr>
+            
+           
+            <td>
+                不发声
+            </td>
+            <td><input type="checkbox" name="E2" value="1" onclick="count()"> 1分<br></td>
+        </tr>
+        <tr>
+            <td>“T"(tube)</td>
+            <td>
+                因气管插管或切开而无法正常发声，以“T"(tube)表示
+            </td>
+            <td>T分</td>
+        </tr>
+        <tr>
+            <td>“D”(dysphasic)</td>
+            <td>
+                平素有言语障碍史，以“D”(dysphasic)表示
+            </td>
+            <td>D分</td>
+        </tr>
+    </tbody>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="6">格拉斯哥昏迷量表(M)</td>
+            <td rowspan="6">运动反应（单选）</td>
+            <td>口令</td>
+            <td>
+               能执行简单的命令
+            </td>
+            <td><input type="checkbox" name="E3" value="6" onclick="count()"> 6分<br></td>
+        </tr>
+        <td rowspan="5">疼痛</td
+        <tr>
+            <td>
+                疼痛时能拨开医生的手
+            </td>
+            <td> <input type="checkbox" name="E3" value="5" onclick="count()"> 5分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+                对疼痛刺激有反应，肢体会回缩
+            </td>
+            <td> <input type="checkbox" name="E3" value="4" onclick="count()"> 4分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+                 对疼痛刺激有反应，肢体会弯曲，呈“去皮质强直"姿势
+            </td>
+            <td><input type="checkbox" name="E3" value="3" onclick="count()"> 3分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+                对疼痛刺激有反应，肢体会伸直，呈“去大脑强直"姿势
+            </td>
+            <td> <input type="checkbox" name="E3" value="2" onclick="count()"> 2分<br></td>
+        </tr>
+        <tr>
+            
+            
+            <td>
+               对疼痛无任何反应
+            </td>
+            <td><input type="checkbox" name="E3" value="1" onclick="count()"> 1分<br></td>
+        </tr>
+    </tbody>
+    </thead>
+    
+    
+    
+    </thead>
+    
+    </table>
+    
+    
+        
+        <h2 id="zhishu">GCS总分: 0</h2>
     </div>
 </body>
 </html>
